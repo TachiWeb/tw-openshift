@@ -1,0 +1,2 @@
+cd $OPENSHIFT_DATA_DIR
+nohup java -jar $OPENSHIFT_REPO_DIR/TachiServer.jar -ip $OPENSHIFT_DIY_IP -port $OPENSHIFT_DIY_PORT |& /usr/bin/logshifter -tag diy &
