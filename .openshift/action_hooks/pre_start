@@ -1,0 +1,8 @@
+#!/bin/bash
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+cd "$OPENSHIFT_REPO_DIR"
+
+URL="$(curl -s https://api.github.com/repos/TachiWeb/TachiWeb-Server/releases |  jq --raw-output '.[0] | .assets[0] | .browser_download_url')"
+echo "Downloading: $URL"
+wget "$URL" -O TachiServer.jar
